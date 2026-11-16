@@ -26,4 +26,4 @@ jobs:
         run: |
           git clone -b 0.1 https://github.com/NixOS/nix.git
           ls -lR nix
-          bash -c "autoconf --version && automake --version && libtool --version"
+          bash -c "pacman --version"
