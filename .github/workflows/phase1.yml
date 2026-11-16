@@ -117,17 +117,9 @@ jobs:
             }
           }
 
-      - name: meson and ninja
+      - name: meson
         shell: pwsh
         run: |
-          $tools = @("meson", "ninja")
-          foreach ($tool in $tools) {
-            if (Get-Command $tool -ErrorAction SilentlyContinue) {
-              Write-Host "Found $tool"
-              & $tool --version
-            } else {
-              Write-Error "$tool is NOT installed or not in the PATH."
-              exit 1
-            }
-          }
+          python -m pip install meson
+          meson --version
 
