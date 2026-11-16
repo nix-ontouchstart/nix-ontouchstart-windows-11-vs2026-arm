@@ -25,5 +25,6 @@ jobs:
         shell: bash
         run: |
           git clone https://github.com/NixOS/nix.git
+          git checkout 0.1
           ls -lR nix
 
