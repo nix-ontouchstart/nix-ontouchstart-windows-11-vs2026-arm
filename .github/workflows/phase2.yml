@@ -1,0 +1,16 @@
+name: Phase 2 - get nix source code
+
+on:
+  workflow_call:
+
+jobs:
+  discovery:
+    runs-on: windows-11-vs2026-arm
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Get nix source code
+        shell: bash
+        run: |
+          git clone https://github.com/NixOS/nix.git
+          ls -lR nix
