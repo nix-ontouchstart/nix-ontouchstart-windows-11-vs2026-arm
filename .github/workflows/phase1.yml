@@ -123,3 +123,8 @@ jobs:
           python -m pip install meson
           meson --version
 
+      - name: ninja
+        shell: pwsh
+        run: |
+          ninja --version
+
