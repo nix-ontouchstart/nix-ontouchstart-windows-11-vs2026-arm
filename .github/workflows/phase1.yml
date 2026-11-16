@@ -116,3 +116,18 @@ jobs:
               }
             }
           }
+
+      - name: meson and ninja
+        shell: pwsh
+        run: |
+          $tools = @("meson", "ninja")
+          foreach ($tool in $tools) {
+            if (Get-Command $tool -ErrorAction SilentlyContinue) {
+              Write-Host "Found $tool"
+              & $tool --version
+            } else {
+              Write-Error "$tool is NOT installed or not in the PATH."
+              exit 1
+            }
+          }
+
