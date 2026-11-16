@@ -25,3 +25,8 @@ jobs:
         run: |
           git clone https://github.com/NixOS/nix.git
           ls -lR nix
+
+      - name: meson setup build
+        shell: bash
+        run: |
+          cd nix && meson setup build
